@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inaya Team — Applications &amp; jeux mobiles</title>
+<meta name="description" content="Applications et jeux mobiles développés par Inaya Team : EnigmAbyss, Mia — Dés et bluff, Dames 10×10, Mots fléchés.">
+<meta property="og:title" content="Inaya Team — Applications &amp; jeux mobiles">
+<meta property="og:description" content="Découvrez les jeux mobiles d'Inaya Team sur Google Play.">
+<meta property="og:image" content="https://play-lh.googleusercontent.com/BKRPluNgwHC9uySwuXFN4aeDKfH8h6_6_KeaTpj2LPNdeb5m-DnzodJjnhcWpr5b4Q14HLXE6DS16h4s0wvJ=w1200-h630-rw">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://play-lh.googleusercontent.com/unYJcKeEymd68A287rqYpPOoPMphjPgMnIguuFzini9Fla_zUSemu3-Yp14cK2V35msXe6Oi9dqyvZCLJK1X=s64-rw">
+<style>
+  :root{
+    --bg: #0b0f1a;
+    --bg-soft: #121829;
+    --card: #161d31;
+    --card-border: #232c47;
+    --text: #eef1fa;
+    --text-dim: #a6afc9;
+    --accent: #7c9bff;
+    --accent-2: #ff7cc8;
+    --radius: 18px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1100px 600px at 15% -10%, rgba(124,155,255,.18), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(255,124,200,.12), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height:1.5;
+    min-height:100vh;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  header.hero{padding:72px 0 48px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--text-dim);
+    background:rgba(124,155,255,.1);
+    border:1px solid var(--card-border);
+    padding:6px 14px;border-radius:999px;
+    margin-bottom:22px;
+  }
+  .eyebrow img{width:16px;height:16px;border-radius:4px;display:block;}
+  h1{
+    font-size:clamp(32px, 5vw, 52px);
+    line-height:1.08;
+    margin:0 0 16px;
+    font-weight:800;
+    letter-spacing:-.02em;
+  }
+  h1 span{
+    background:linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .lede{
+    font-size:18px;
+    color:var(--text-dim);
+    max-width:620px;
+    margin:0 0 28px;
+  }
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 18px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:14.5px;
+    text-decoration:none;
+    border:1px solid var(--card-border);
+    transition:transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--accent), #5a78e0);
+    border-color:transparent;
+    color:#0b0f1a;
+  }
+  .btn-ghost{background:var(--card);color:var(--text);}
+  .btn:hover{transform:translateY(-2px);border-color:var(--accent);}
+
+  .section-title{
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    margin:0 0 20px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:22px;
+    padding-bottom:64px;
+  }
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr;}
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+    color:var(--text);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    border-color:var(--accent);
+    box-shadow:0 20px 40px -20px rgba(124,155,255,.35);
+  }
+  .card .art{
+    position:relative;
+    aspect-ratio:16/9;
+    background:#0a0e18;
+  }
+  .card .art img{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  .card .icon{
+    position:absolute;
+    left:16px;
+    bottom:-24px;
+    width:64px;height:64px;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.45);
+    border:2px solid var(--card);
+    background:#0a0e18;
+    object-fit:cover;
+  }
+  .card .body{
+    padding:38px 18px 20px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .card h3{
+    margin:0 0 6px;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:-.01em;
+  }
+  .card p{
+    margin:0 0 18px;
+    font-size:14px;
+    color:var(--text-dim);
+    flex:1;
+  }
+  .card .play-link{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13.5px;font-weight:600;color:var(--accent);
+  }
+  .card .play-link svg{width:16px;height:16px;flex-shrink:0;}
+
+  footer{
+    border-top:1px solid var(--card-border);
+    padding:36px 0 60px;
+    color:var(--text-dim);
+    font-size:14px;
+  }
+  footer a{color:var(--accent);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  footer .foot-row{
+    display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow">
+      <img src="https://play-lh.googleusercontent.com/unYJcKeEymd68A287rqYpPOoPMphjPgMnIguuFzini9Fla_zUSemu3-Yp14cK2V35msXe6Oi9dqyvZCLJK1X=s64-rw" alt="">
+      Inaya Team sur Google Play
+    </span>
+    <h1>Des jeux mobiles<br><span>simples, soignés, sans fioritures.</span></h1>
+    <p class="lede">
+      cmickael / Inaya Team développe des jeux et applications pour Android : énigmes, jeux de société
+      et de lettres, pensés pour être jolis, rapides et sans publicité intrusive.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/developer?id=Inaya+Team&hl=fr">
+        Voir toutes les applications
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/cmickael">GitHub</a>
+    </div>
+  </header>
+
+  <p class="section-title">Applications &amp; jeux</p>
+  <div class="grid">
+
+    <a class="card" href="https://play.google.com/store/apps/details?id=net.inaya.puzzle">
+      <div class="art">
+        <img src="https://play-lh.googleusercontent.com/BKRPluNgwHC9uySwuXFN4aeDKfH8h6_6_KeaTpj2LPNdeb5m-DnzodJjnhcWpr5b4Q14HLXE6DS16h4s0wvJ=w800-h450-rw" alt="EnigmAbyss">
+        <img class="icon" src="https://play-lh.googleusercontent.com/unYJcKeEymd68A287rqYpPOoPMphjPgMnIguuFzini9Fla_zUSemu3-Yp14cK2V35msXe6Oi9dqyvZCLJK1X=s128-rw" alt="">
+      </div>
+      <div class="body">
+        <h3>EnigmAbyss</h3>
+        <p>Jeu d'énigmes mobile — plongez dans les abysses et résolvez des casse-têtes toujours plus mystérieux.</p>
+        <span class="play-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5A1 1 0 0 0 3 3.5Z"/></svg>
+          Voir sur Google Play
+        </span>
+      </div>
+    </a>
+
+    <a class="card" href="https://play.google.com/store/apps/details?id=net.inaya.mia">
+      <div class="art">
+        <img src="https://play-lh.googleusercontent.com/8fZLWiCpjDp2nRE5dGDiPgIwt9GAoR_tlQU5ZaUBZFv6g3QwjX8912tC-LK29JRWNx5IXSKCc6AVva8RWcBnzBc=w800-h450-rw" alt="Mia — Dés et bluff">
+        <img class="icon" src="https://play-lh.googleusercontent.com/rhICBy_aML6ioM_EV6iYGAR9mRDy1cmabUSOube8N71RDUW7viC6k-gfyMBtncJgRz_JVQA9ZXFU9OM08XCEnQ=s128-rw" alt="">
+      </div>
+      <div class="body">
+        <h3>Mia — Dés et bluff</h3>
+        <p>Le jeu de dés à bluff façon Meyer/Kinito : misez, bluffez, démasquez — un classique revisité pour mobile.</p>
+        <span class="play-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5A1 1 0 0 0 3 3.5Z"/></svg>
+          Voir sur Google Play
+        </span>
+      </div>
+    </a>
+
+    <a class="card" href="https://play.google.com/store/apps/details?id=net.inaya.dames">
+      <div class="art">
+        <img src="https://play-lh.googleusercontent.com/NCWRbZ7uum8rQVgjrpqrvqzjVX_X7s6aOwxbogKiv8CJPsBSYkLYOQzIUPLw-6ZmQ4bl36oE62KHOYVKMFQrdQ=w800-h450-rw" alt="Dames – Jeu de dames 10×10">
+        <img class="icon" src="https://play-lh.googleusercontent.com/oX0H0zwF6o2AqwHJOBFa1AfC869i5oDiyIRC_sTMuBmAVcZc6UgZR0x4F3u-YRKMCeXstnJM8TrGlMRpCpW8=s128-rw" alt="">
+      </div>
+      <div class="body">
+        <h3>Dames – Jeu de dames 10×10</h3>
+        <p>Dames internationales, contre l'ordinateur ou à deux joueurs. Sans publicité, jouable hors ligne.</p>
+        <span class="play-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5A1 1 0 0 0 3 3.5Z"/></svg>
+          Voir sur Google Play
+        </span>
+      </div>
+    </a>
+
+    <a class="card" href="https://play.google.com/store/apps/details?id=net.inaya.motsfleches">
+      <div class="art">
+        <img src="https://play-lh.googleusercontent.com/fnTX25YP9-g3Bk0U8CISAI5OqTUSF-9UGZ9sTi4V8N2JVU5VV54U2LSZJzP3BjTHuCXcFH-FkO3AAfandyzA=w800-h450-rw" alt="Mots fléchés">
+        <img class="icon" src="https://play-lh.googleusercontent.com/IpUoTXHPhlPBUbr2bTEcbLBlBEafTpsVkWmDYmh6M1fNcSgA6TXfYVWxEV5Li_MP3qdJIyD2TTEM5haVmemj5A=s128-rw" alt="">
+      </div>
+      <div class="body">
+        <h3>Mots fléchés</h3>
+        <p>100 grilles en français, 5 niveaux de Découverte à Expert. Sans publicité, jouable hors ligne.</p>
+        <span class="play-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5A1 1 0 0 0 3 3.5Z"/></svg>
+          Voir sur Google Play
+        </span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <div class="foot-row">
+      <span>© <span id="y"></span> Inaya Team — cmickael</span>
+      <span>
+        Retrouvez toutes les applications sur la page développeur
+        <a href="https://play.google.com/store/apps/developer?id=Inaya+Team&hl=fr">Inaya Team</a>.
+      </span>
+    </div>
+  </footer>
+
+</div>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
